@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour
             return;
         Vector3 forwardMove = transform.forward * moveSpeed * Time.deltaTime;
         Vector3 horizontalMove = transform.right * horizontalInput * moveSpeed * Time.fixedDeltaTime * horizontalMultiplayer;
-                        rb.MovePosition(rb.position + forwardMove + horizontalMove);
+        rb.MovePosition(rb.position + forwardMove + horizontalMove);
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
@@ -44,7 +44,6 @@ public class PlayerMove : MonoBehaviour
                 rb.MovePosition(rb.position + forwardMove + horizontalMove);
             }
         }
-        // rb.MovePosition(rb.position + forwardMove + horizontalMove);
     }
     // Update is called once per frame
     void Update()
@@ -55,20 +54,6 @@ public class PlayerMove : MonoBehaviour
         {
             Die();
         }
-        // if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        // {
-        //     if (this.gameObject.transform.position.x > LevelBoundiers.leftSide)
-        //     {
-        //         transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed);
-        //     }
-        // }
-        // if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        // {
-        //     if (this.gameObject.transform.position.x < LevelBoundiers.rightSide)
-        //     {
-        //         transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed * -1);
-        //     }
-        // }
     }
 
     public void Die()
